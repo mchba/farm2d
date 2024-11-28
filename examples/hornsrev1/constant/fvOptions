@@ -1,0 +1,990 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                |                                                 |
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \    /   O peration     | Version:  v2206                                 |
+|   \  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    object          fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Disk 1
+disk1
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk1;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 2
+disk2
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk2;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 3
+disk3
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk3;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 4
+disk4
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk4;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 5
+disk5
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk5;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 6
+disk6
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk6;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 7
+disk7
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk7;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 8
+disk8
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk8;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 9
+disk9
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk9;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 10
+disk10
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk10;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 11
+disk11
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk11;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 12
+disk12
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk12;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 13
+disk13
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk13;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 14
+disk14
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk14;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 15
+disk15
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk15;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 16
+disk16
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk16;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 17
+disk17
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk17;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 18
+disk18
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk18;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 19
+disk19
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk19;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 20
+disk20
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk20;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 21
+disk21
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk21;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 22
+disk22
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk22;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 23
+disk23
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk23;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 24
+disk24
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk24;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 25
+disk25
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk25;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 26
+disk26
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk26;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 27
+disk27
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk27;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 28
+disk28
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk28;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 29
+disk29
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk29;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 30
+disk30
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk30;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 31
+disk31
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk31;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 32
+disk32
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk32;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 33
+disk33
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk33;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 34
+disk34
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk34;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 35
+disk35
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk35;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 36
+disk36
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk36;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 37
+disk37
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk37;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 38
+disk38
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk38;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 39
+disk39
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk39;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 40
+disk40
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk40;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 41
+disk41
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk41;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 42
+disk42
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk42;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 43
+disk43
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk43;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 44
+disk44
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk44;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 45
+disk45
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk45;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 46
+disk46
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk46;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 47
+disk47
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk47;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 48
+disk48
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk48;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 49
+disk49
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk49;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 50
+disk50
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk50;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 51
+disk51
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk51;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 52
+disk52
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk52;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 53
+disk53
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk53;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 54
+disk54
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk54;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 55
+disk55
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk55;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 56
+disk56
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk56;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 57
+disk57
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk57;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 58
+disk58
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk58;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 59
+disk59
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk59;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 60
+disk60
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk60;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 61
+disk61
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk61;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 62
+disk62
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk62;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 63
+disk63
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk63;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 64
+disk64
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk64;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 65
+disk65
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk65;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 66
+disk66
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk66;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 67
+disk67
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk67;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 68
+disk68
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk68;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 69
+disk69
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk69;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 70
+disk70
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk70;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 71
+disk71
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk71;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 72
+disk72
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk72;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 73
+disk73
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk73;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 74
+disk74
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk74;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 75
+disk75
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk75;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 76
+disk76
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk76;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 77
+disk77
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk77;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 78
+disk78
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk78;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 79
+disk79
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk79;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// Disk 80
+disk80
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk80;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// K- and eps-source terms to avoid flow development
+ScalarSemiImplicitSource1
+{
+    type                scalarSemiImplicitSource;
+    selectionMode       all;
+    volumeMode          specific;
+    // Specification of sources in OpenFOAM-2206 and newer)
+    sources
+    {
+        // Specified as ( explicit(Su), implicit(Sp) ):
+        k           (0.0008479746 0);
+        epsilon     (4.9318306275e-06  0);
+    }
+}

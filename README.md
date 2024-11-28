@@ -2,7 +2,9 @@
 
 A setup to run 2D RANS simulations of wind farm flows in OpenFOAM.
 
-Since `farm2d` is really fast, you can easily run the simulations on a regular laptop.
+Since `farm2d` is relatively fast, you can run the simulations on a regular laptop. This simulation of Horns Rev 1 ran in 96 seconds on my laptop (using 4 cores).
+
+![](imgs/hornsrev1_u_contour.png)
 
 ## Installation
 
@@ -16,7 +18,7 @@ git clone https://github.com/mchba/farm2d.git
 
 ### OpenFOAM
 
-The current setup has only been tested with v2006. You can see this [video](https://www.youtube.com/watch?v=CeEJS1eT9NE&t=477s) (start around 8:00) for a concise guide on how to download OpenFOAM.
+The current setup has only been tested with v2206. You can see this [video](https://www.youtube.com/watch?v=CeEJS1eT9NE&t=477s) (start around 8:00) for a concise guide on how to download OpenFOAM.
 
 To check that you have installed OpenFOAM correctly, type
 
@@ -98,10 +100,15 @@ cd my_second_test
 python setup_case.py
 ```
 
-A few plots have automatically been made, e.g. the velocity contours:
-![](imgs/V80_U_contour.pdf)
+A contour plot was automatically created with the python script:
+
+![](imgs/farm2d_u_contour.png)
 
 
+## License
 
+This project is released under the MIT License.
+
+You are free to use, modify, and distribute the code for academic purposes, commercial projects, personal experiments, or any other purpose. However, the code is provided "as-is," without any warranty of any kind. The developers of this project are not liable for any damages or issues arising from the use of this software. Users bear sole responsibility for the results obtained or consequences arising from its use.
 
 
