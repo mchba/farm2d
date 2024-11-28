@@ -1,0 +1,42 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                |                                                 |
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \    /   O peration     | Version:  v2206                                 |
+|   \  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    object          fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Disk 1
+disk1
+{
+    type            AD_calaf;
+    variant         uniformThrust;
+    selectionMode   cellSet;
+    cellSet         actuationDisk1;
+    diskDir         (1 0 0);
+    Ct              0.7500;
+    diskArea        80.0;
+}
+
+// K- and eps-source terms to avoid flow development
+ScalarSemiImplicitSource1
+{
+    type                scalarSemiImplicitSource;
+    selectionMode       all;
+    volumeMode          specific;
+    // Specification of sources in OpenFOAM-2206 and newer)
+    sources
+    {
+        // Specified as ( explicit(Su), implicit(Sp) ):
+        k           (0.0008479746 0);
+        epsilon     (4.9318306275e-06  0);
+    }
+}
