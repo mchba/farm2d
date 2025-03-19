@@ -17,8 +17,8 @@ FoamFile
 // Disk 1
 disk1
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk1;
     diskDir         (1 0 0);
@@ -29,8 +29,8 @@ disk1
 // Disk 2
 disk2
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk2;
     diskDir         (1 0 0);
@@ -41,8 +41,8 @@ disk2
 // Disk 3
 disk3
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk3;
     diskDir         (1 0 0);
@@ -53,8 +53,8 @@ disk3
 // Disk 4
 disk4
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk4;
     diskDir         (1 0 0);
@@ -65,8 +65,8 @@ disk4
 // Disk 5
 disk5
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk5;
     diskDir         (1 0 0);
@@ -77,8 +77,8 @@ disk5
 // Disk 6
 disk6
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk6;
     diskDir         (1 0 0);
@@ -89,8 +89,8 @@ disk6
 // Disk 7
 disk7
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk7;
     diskDir         (1 0 0);
@@ -101,8 +101,8 @@ disk7
 // Disk 8
 disk8
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk8;
     diskDir         (1 0 0);
@@ -113,8 +113,8 @@ disk8
 // Disk 9
 disk9
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk9;
     diskDir         (1 0 0);
@@ -125,8 +125,8 @@ disk9
 // Disk 10
 disk10
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk10;
     diskDir         (1 0 0);
@@ -137,8 +137,8 @@ disk10
 // Disk 11
 disk11
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk11;
     diskDir         (1 0 0);
@@ -149,8 +149,8 @@ disk11
 // Disk 12
 disk12
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk12;
     diskDir         (1 0 0);
@@ -161,8 +161,8 @@ disk12
 // Disk 13
 disk13
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk13;
     diskDir         (1 0 0);
@@ -173,8 +173,8 @@ disk13
 // Disk 14
 disk14
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk14;
     diskDir         (1 0 0);
@@ -185,8 +185,8 @@ disk14
 // Disk 15
 disk15
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk15;
     diskDir         (1 0 0);
@@ -197,8 +197,8 @@ disk15
 // Disk 16
 disk16
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk16;
     diskDir         (1 0 0);
@@ -209,8 +209,8 @@ disk16
 // Disk 17
 disk17
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk17;
     diskDir         (1 0 0);
@@ -221,8 +221,8 @@ disk17
 // Disk 18
 disk18
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk18;
     diskDir         (1 0 0);
@@ -233,8 +233,8 @@ disk18
 // Disk 19
 disk19
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk19;
     diskDir         (1 0 0);
@@ -245,8 +245,8 @@ disk19
 // Disk 20
 disk20
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk20;
     diskDir         (1 0 0);
@@ -257,8 +257,8 @@ disk20
 // Disk 21
 disk21
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk21;
     diskDir         (1 0 0);
@@ -269,8 +269,8 @@ disk21
 // Disk 22
 disk22
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk22;
     diskDir         (1 0 0);
@@ -281,8 +281,8 @@ disk22
 // Disk 23
 disk23
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk23;
     diskDir         (1 0 0);
@@ -293,8 +293,8 @@ disk23
 // Disk 24
 disk24
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk24;
     diskDir         (1 0 0);
@@ -305,8 +305,8 @@ disk24
 // Disk 25
 disk25
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk25;
     diskDir         (1 0 0);
@@ -317,8 +317,8 @@ disk25
 // Disk 26
 disk26
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk26;
     diskDir         (1 0 0);
@@ -329,8 +329,8 @@ disk26
 // Disk 27
 disk27
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk27;
     diskDir         (1 0 0);
@@ -341,8 +341,8 @@ disk27
 // Disk 28
 disk28
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk28;
     diskDir         (1 0 0);
@@ -353,8 +353,8 @@ disk28
 // Disk 29
 disk29
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk29;
     diskDir         (1 0 0);
@@ -365,8 +365,8 @@ disk29
 // Disk 30
 disk30
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk30;
     diskDir         (1 0 0);
@@ -377,8 +377,8 @@ disk30
 // Disk 31
 disk31
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk31;
     diskDir         (1 0 0);
@@ -389,8 +389,8 @@ disk31
 // Disk 32
 disk32
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk32;
     diskDir         (1 0 0);
@@ -401,8 +401,8 @@ disk32
 // Disk 33
 disk33
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk33;
     diskDir         (1 0 0);
@@ -413,8 +413,8 @@ disk33
 // Disk 34
 disk34
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk34;
     diskDir         (1 0 0);
@@ -425,8 +425,8 @@ disk34
 // Disk 35
 disk35
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk35;
     diskDir         (1 0 0);
@@ -437,8 +437,8 @@ disk35
 // Disk 36
 disk36
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk36;
     diskDir         (1 0 0);
@@ -449,8 +449,8 @@ disk36
 // Disk 37
 disk37
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk37;
     diskDir         (1 0 0);
@@ -461,8 +461,8 @@ disk37
 // Disk 38
 disk38
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk38;
     diskDir         (1 0 0);
@@ -473,8 +473,8 @@ disk38
 // Disk 39
 disk39
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk39;
     diskDir         (1 0 0);
@@ -485,8 +485,8 @@ disk39
 // Disk 40
 disk40
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk40;
     diskDir         (1 0 0);
@@ -497,8 +497,8 @@ disk40
 // Disk 41
 disk41
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk41;
     diskDir         (1 0 0);
@@ -509,8 +509,8 @@ disk41
 // Disk 42
 disk42
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk42;
     diskDir         (1 0 0);
@@ -521,8 +521,8 @@ disk42
 // Disk 43
 disk43
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk43;
     diskDir         (1 0 0);
@@ -533,8 +533,8 @@ disk43
 // Disk 44
 disk44
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk44;
     diskDir         (1 0 0);
@@ -545,8 +545,8 @@ disk44
 // Disk 45
 disk45
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk45;
     diskDir         (1 0 0);
@@ -557,8 +557,8 @@ disk45
 // Disk 46
 disk46
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk46;
     diskDir         (1 0 0);
@@ -569,8 +569,8 @@ disk46
 // Disk 47
 disk47
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk47;
     diskDir         (1 0 0);
@@ -581,8 +581,8 @@ disk47
 // Disk 48
 disk48
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk48;
     diskDir         (1 0 0);
@@ -593,8 +593,8 @@ disk48
 // Disk 49
 disk49
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk49;
     diskDir         (1 0 0);
@@ -605,8 +605,8 @@ disk49
 // Disk 50
 disk50
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk50;
     diskDir         (1 0 0);
@@ -617,8 +617,8 @@ disk50
 // Disk 51
 disk51
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk51;
     diskDir         (1 0 0);
@@ -629,8 +629,8 @@ disk51
 // Disk 52
 disk52
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk52;
     diskDir         (1 0 0);
@@ -641,8 +641,8 @@ disk52
 // Disk 53
 disk53
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk53;
     diskDir         (1 0 0);
@@ -653,8 +653,8 @@ disk53
 // Disk 54
 disk54
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk54;
     diskDir         (1 0 0);
@@ -665,8 +665,8 @@ disk54
 // Disk 55
 disk55
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk55;
     diskDir         (1 0 0);
@@ -677,8 +677,8 @@ disk55
 // Disk 56
 disk56
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk56;
     diskDir         (1 0 0);
@@ -689,8 +689,8 @@ disk56
 // Disk 57
 disk57
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk57;
     diskDir         (1 0 0);
@@ -701,8 +701,8 @@ disk57
 // Disk 58
 disk58
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk58;
     diskDir         (1 0 0);
@@ -713,8 +713,8 @@ disk58
 // Disk 59
 disk59
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk59;
     diskDir         (1 0 0);
@@ -725,8 +725,8 @@ disk59
 // Disk 60
 disk60
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk60;
     diskDir         (1 0 0);
@@ -737,8 +737,8 @@ disk60
 // Disk 61
 disk61
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk61;
     diskDir         (1 0 0);
@@ -749,8 +749,8 @@ disk61
 // Disk 62
 disk62
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk62;
     diskDir         (1 0 0);
@@ -761,8 +761,8 @@ disk62
 // Disk 63
 disk63
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk63;
     diskDir         (1 0 0);
@@ -773,8 +773,8 @@ disk63
 // Disk 64
 disk64
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk64;
     diskDir         (1 0 0);
@@ -785,8 +785,8 @@ disk64
 // Disk 65
 disk65
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk65;
     diskDir         (1 0 0);
@@ -797,8 +797,8 @@ disk65
 // Disk 66
 disk66
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk66;
     diskDir         (1 0 0);
@@ -809,8 +809,8 @@ disk66
 // Disk 67
 disk67
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk67;
     diskDir         (1 0 0);
@@ -821,8 +821,8 @@ disk67
 // Disk 68
 disk68
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk68;
     diskDir         (1 0 0);
@@ -833,8 +833,8 @@ disk68
 // Disk 69
 disk69
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk69;
     diskDir         (1 0 0);
@@ -845,8 +845,8 @@ disk69
 // Disk 70
 disk70
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk70;
     diskDir         (1 0 0);
@@ -857,8 +857,8 @@ disk70
 // Disk 71
 disk71
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk71;
     diskDir         (1 0 0);
@@ -869,8 +869,8 @@ disk71
 // Disk 72
 disk72
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk72;
     diskDir         (1 0 0);
@@ -881,8 +881,8 @@ disk72
 // Disk 73
 disk73
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk73;
     diskDir         (1 0 0);
@@ -893,8 +893,8 @@ disk73
 // Disk 74
 disk74
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk74;
     diskDir         (1 0 0);
@@ -905,8 +905,8 @@ disk74
 // Disk 75
 disk75
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk75;
     diskDir         (1 0 0);
@@ -917,8 +917,8 @@ disk75
 // Disk 76
 disk76
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk76;
     diskDir         (1 0 0);
@@ -929,8 +929,8 @@ disk76
 // Disk 77
 disk77
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk77;
     diskDir         (1 0 0);
@@ -941,8 +941,8 @@ disk77
 // Disk 78
 disk78
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk78;
     diskDir         (1 0 0);
@@ -953,8 +953,8 @@ disk78
 // Disk 79
 disk79
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk79;
     diskDir         (1 0 0);
@@ -965,8 +965,8 @@ disk79
 // Disk 80
 disk80
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk80;
     diskDir         (1 0 0);

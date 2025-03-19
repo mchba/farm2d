@@ -48,7 +48,7 @@ runTimeModifiable yes;
 libs 
 (
 "libatmosphericModels.so" 
-"lib_ad_calaf.so"
+"lib_actuatorDiskFoam.so"
 );
 
 // Output Reynolds stress tensor.

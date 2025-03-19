@@ -17,8 +17,8 @@ FoamFile
 // Disk 1
 disk1
 {
-    type            AD_calaf;
-    variant         uniformThrust;
+    type            actuatorDiskFoam;
+    variant         calaf;
     selectionMode   cellSet;
     cellSet         actuationDisk1;
     diskDir         (1 0 0);

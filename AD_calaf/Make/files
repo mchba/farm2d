@@ -1,2 +1,0 @@
-AD_calaf.C
-LIB = $(FOAM_USER_LIBBIN)/lib_ad_calaf

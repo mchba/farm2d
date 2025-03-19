@@ -6,6 +6,8 @@ Since `farm2d` is relatively fast, you can run the simulations on a regular lapt
 
 ![](imgs/hornsrev1_u_contour.png)
 
+The idea of `farm2d` is to automate the process of grid generation, turbine setup, and running the OpenFOAM simulation through a simple Python framework. In its current version, it works by modifying the files of an existing OpenFOAM case.
+
 ## Installation
 
 Assuming that your git projects are located at `~/git` on your computer:
@@ -16,40 +18,13 @@ git clone https://github.com/mchba/farm2d.git
 
 *Or download the repository as a ZIP-file or any other way you like*.
 
-### OpenFOAM
+### OpenFOAM and the actuator disk (AD)
 
-The current setup has only been tested with v2206. You can see this [video](https://www.youtube.com/watch?v=CeEJS1eT9NE&t=477s) (start around 8:00) for a concise guide on how to download OpenFOAM.
-
-To check that you have installed OpenFOAM correctly, type
-
-```
-simpleFoam -help
-```
-
-in the terminal, which, if successful, should print some information about the simpleFoam solver.
-
-### Actuator Disk (AD) compilation
-
-The built-in AD code of OpenFOAM uses a "monitor"-method to determine the freestream velocity, which does not make sense for wind farm studies. Therefore, `farm2d` instead uses an AD based on 1D momentum control.
-
-To be able to use this AD, it must first be compiled and linked to your OpenFOAM installation.
-
-1. Activate your OpenFOAM (if `simpleFoam -help` works, it is activated) and check if you have a OpenFOAM user directory:
-
-   `cd $WM_PROJECT_USER_DIR`
-
-    If you don't have this directory, create it with `mkdir -p $WM_PROJECT_USER_DIR/{run,applications,src}`. The user directory is used to add custom code, see more info [here](https://www.tfd.chalmers.se/~hani/kurser/OS_CFD_2022/lectureNotes/01_initialPreparations.pdf).
+To use `farm2d` you need to install OpenFOAM and a custom acutator disk (AD)
+ model called [actuatorDiskFoam](https://github.com/mchba/actuatorDiskFoam). Instructions on the installation are given on the actuatorDiskFoam front page.
 
 
-2. `cp AD_calaf $WM_PROJECT_USER_DIR/src/ -r`.
-3. `cd $WM_PROJECT_USER_DIR/src/AD_calaf`
-4. `wmake`. This compiles the AD code and creates a library called `lib_ad_calaf.so` in the `$WM_PROJECT_USER_DIR/platforms` folder.
-
-If you look at the examples of `farm2d`, you will find that they all have a reference to the `lib_ad_calaf.so`-file in their `system/controlDict`-file.
-
-*This AD can also be used in 3D simulations by adjusting diskArea in constant/fvOptions and the turbine location in system/topoSetDict.*
-
-### Python (optional)
+### Python
 
 It is recommended to use a virtual Python environment, for example through [Miniconda](https://docs.anaconda.com/miniconda/). Assuming you already have a conda installation, create a new environment as:
 
@@ -57,6 +32,8 @@ It is recommended to use a virtual Python environment, for example through [Mini
 conda create -n farm2d python spyder numpy scipy xarray matplotlib pyvista
 conda activate farm2d
 ```
+
+*Note: The pyvista package does not work on [ARC](https://arc-user-guide.readthedocs.io/en/latest/index.html), but is also not strictly necessary to run `farm2d`.*
 
 Also add `farm2d` to your `~/.bashrc`-file:
 
@@ -69,7 +46,7 @@ export PYTHONPATH="${PYTHONPATH}:/home/<username>/git/farm2d/src"
 
 ### Native OpenFOAM
 
-You can run any of the examples with "pure" OpenFOAM. This does not require any Python installation.
+You can actually run any of the examples with "pure" OpenFOAM. This does not require any Python installation.
 ```
 cd examples
 cp V80 my_first_test -r
