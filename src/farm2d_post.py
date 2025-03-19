@@ -26,9 +26,28 @@ def load_ad(filename):
     return disk
 
 
+# Load whole iteration history OpenFOAM AD output file.
+def load_ad_history(filename):
+    # Get headers
+    with open(filename, 'r') as file:
+        #file.readline()  # Skip the first line
+        #headers = file.readline().strip().split()  # Read the second line for headers
+        file.readline()  # Skip the first line
+        headers = file.readline().strip().split()
+        headers = [h for h in headers if h != '#']  # Remove all '#' symbols
+        
+    # Read actually data
+    data = np.genfromtxt(filename,skip_header=2)
+    
+    # Create a dictionary to store all iterations of each column
+    disk = {header: data[:, i] for i, header in enumerate(headers)}
+    
+    return disk
+
+
 # Load all ADs.
-def load_all_ad(twod=True,rho=1.225):
-    turbines = np.genfromtxt('turbines.dat',skip_header=1)
+def load_all_ad(turbine_file='turbines.dat',post_folder='postProcessing',twod=True,rho=1.225):
+    turbines = np.genfromtxt(turbine_file,skip_header=1)
     if len(np.shape(turbines)) == 1:
         # Special case: If there is only one turbine, convert 1D array to 2D array.
         turbines = np.reshape(turbines, (-1,np.shape(turbines)[0]))
@@ -49,7 +68,7 @@ def load_all_ad(twod=True,rho=1.225):
                 'D':  wt_D[i],
                  }
         # Combine with OpenFOAM output
-        diski.update(load_ad('postProcessing/disk%d/0/AD_calaf.dat'%(wt_nr[i])))
+        diski.update(load_ad('%s/disk%d/0/AD_calaf.dat'%(post_folder,wt_nr[i])))
         
         # Correct T = 0.5*rho*D*U**2*CT to T = 0.5*rho*A*U**2*CT
         if twod == True:
@@ -93,13 +112,13 @@ def load_flowfield(foamfile):
         if k == 'epsilon':
             outdata['eps'] = data['epsilon']
         if k == 'turbulenceProperties:R':
-            outdata['uu'] = data['turbulenceProperties:R'][:,0] 
-            outdata['uv'] = data['turbulenceProperties:R'][:,1] 
-            outdata['uw'] = data['turbulenceProperties:R'][:,2] 
-            outdata['vv'] = data['turbulenceProperties:R'][:,3] 
-            outdata['vw'] = data['turbulenceProperties:R'][:,4] 
-            outdata['ww'] = data['turbulenceProperties:R'][:,5] 
-            
+            outdata['uu'] = data['turbulenceProperties:R'][:,0] # probably correct
+            outdata['vv'] = data['turbulenceProperties:R'][:,1] # should probably be vv
+            outdata['ww'] = data['turbulenceProperties:R'][:,2] # should probably be ww
+            outdata['uv'] = data['turbulenceProperties:R'][:,3] # should probably be uv
+            outdata['uw'] = data['turbulenceProperties:R'][:,4] # should proably be uw
+            outdata['vw'] = data['turbulenceProperties:R'][:,5] # should probably be vw
+                
     return outdata
 
 
@@ -208,7 +227,57 @@ def extract_last_execution_time(filename):
                 except (IndexError, ValueError):
                     pass
     return execution_time
+
+def extract_number_of_cores(filename):
+    nprocs = None
+    with open(filename, 'r') as file:
+        for line in file:
+            if "nProcs :" in line:
+                parts = line.split()
+                try:
+                    nprocs = float(parts[2])
+                except (IndexError, ValueError):
+                    pass
+    return int(nprocs)
+
+def extract_number_of_iterations(filename):
+    iterations = None
+    with open(filename, 'r') as file:
+        for line in file:
+            if line.startswith('Time = '):
+                parts = line.split()
+                try:
+                    iterations = float(parts[2])
+                except (IndexError, ValueError):
+                    pass
+    return int(iterations)
+
+def extract_info(filename):
+    walltime = extract_last_execution_time(filename)
+    cores = extract_number_of_cores(filename)
+    iterations = extract_number_of_iterations(filename)
+    cputime = walltime*cores
+    res = {'walltime': walltime,
+           'cores': cores,
+           'iterations': iterations,
+           'cputime': cputime,
+           }
+    return res
     
     
+def extract_number_of_cells(filename):
+    """
+        Load number of cells from log.blockMesh file.
+    """
+    ncells = None
+    with open(filename, 'r') as file:
+        for line in file:
+            if "nCells" in line:
+                parts = line.split()
+                try:
+                    ncells = float(parts[1])
+                except (IndexError, ValueError):
+                    pass
+    return int(ncells)
     
     

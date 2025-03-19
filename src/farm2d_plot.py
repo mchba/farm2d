@@ -34,6 +34,7 @@ def plot_xyslice(X,Y,VAR,varname='$U$ [m/s]',varlim='None',lvls=50,filename='Non
     comcolRANS.set_ticks(np.linspace(varmin,varmax,5))
     if filename is not 'None':
         fig.savefig(filename,bbox_inches='tight')
+    return fig
         
     
 def get_xline(sdata, var, x):
