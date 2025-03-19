@@ -2,6 +2,7 @@ from farm2d import farm2d
 from sys_commands import *
 from farm2d_post import *
 from farm2d_plot import *
+from farm2d_pyvista import *
 
 '''
     Horns Rev 1 simulation.
@@ -52,7 +53,7 @@ plt.ylim(bottom=0)
 
 # Create turbines
 def V80(x,y):
-    return {'x': x, 
+    return {'x': x,
             'y': y,
             'D': D,
             'zh': 70,

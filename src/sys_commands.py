@@ -5,7 +5,7 @@ import os
 def create_folder(path):
     if not os.path.exists(path):
         os.makedirs(path)
-        print("Created a folder: " + path) 
+        print("Created a folder: " + path)
     return path
 
 # A function to create links
@@ -24,13 +24,13 @@ def copy_file(original, target):
 def change_entry(flag, value, file):
     os.system("sed -i 's/" + flag + "/" + value + "/' " + file)
     print("Changed the value of the entry " + flag + " to " + value + " in " + file)
-    
+
 # change directory
 def change_directory(dir):
     os.chdir(dir)
     print("Current working directory: " + os.getcwd())
     return dir
-    
+
 # A function to run a system command
 def system_com(command):
     print("running command: " + command)

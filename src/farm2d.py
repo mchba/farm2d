@@ -1,14 +1,13 @@
 # Import necessary libraries
 import numpy as np
 from sys_commands import system_com
-import pyvista as pv
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import matplotlib.backends.backend_pdf
 
 def lineOut(id,s):
     line = ' '*id*4 + s + '\n'
-    return line 
+    return line
 
 class farm2d():
     '''
@@ -22,26 +21,26 @@ class farm2d():
         '''
             Default parameters.
         '''
-        
+
         # Turbine diameter used to normalize grid
         self.D = 80
-        
+
         # Wake domain
         self.lx = 16*self.D
         self.ly = 4*self.D
         self.lz = 1
         self.dx = self.D/8
-        
+
         # Outer domain
         self.dxo = 2*self.D  # Resolution at outer domain (used to stretch domain outwards)
         self.Lxw = 50*self.D    # West
         self.Lxe = 50*self.D    # East
         self.Lys = 50*self.D    # South
         self.Lyn = 50*self.D    # South
-        
+
         # Turbines
         self.wts = []
-        
+
         # Turbulence parameters
         self.Ce1  = 1.44
         self.Ce2  = 1.92
@@ -57,12 +56,12 @@ class farm2d():
         self.utau = self.Kinf**0.5*self.Cmu**0.25
         self.z0   = self.zref/(np.exp(self.kap*self.Uinf/self.utau) - 1)
         self.epsinf = self.utau**3/(self.kap*(self.zref + self.z0))
-        
+
         # Source term
         self.kesource = True
         self.Sk = self.epsinf
         self.Seps = self.Ce2*self.epsinf**2/self.Kinf
-    
+
     def setup(self,var):
         '''
             Method to load input settings.
@@ -73,7 +72,7 @@ class farm2d():
                 setattr(self, k, var[k])
             else:
                 print(k + ' is not a valid input! Exiting...')
-                
+
         # Update some variables
         self.Kinf = 1.5*(self.Iinf*self.Uinf)**2
         self.utau = self.Kinf**0.5*self.Cmu**0.25
@@ -81,8 +80,8 @@ class farm2d():
         self.epsinf = self.utau**3/(self.kap*(self.zref + self.z0))
         self.Sk = self.epsinf
         self.Seps = self.Ce2*self.epsinf**2/self.Kinf
-        
-    
+
+
     def write_dict2file(self,s,filename,ob='unknown',ff=True):
         self.out = ''
         def l(id,s):
@@ -105,17 +104,17 @@ class farm2d():
             l(0,"}")
         l(0,"// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //")
         l(0,"")
-    
+
         # Write to file
         with open(filename, "w") as file:
             file.write(self.out + s)
-            
-    
+
+
     def make_grid(self,filename):
         '''
             Create blockMeshDict
         '''
-        
+
         # Block corners
         x1 = -self.Lxw
         x2 = 0.0
@@ -127,12 +126,12 @@ class farm2d():
         y4 = self.ly+self.Lyn
         z1 = 0.0
         z2 = self.lz
-        
-        # String to be made        
+
+        # String to be made
         self.code_block = ''
         def l(id,s):
             self.code_block += lineOut(id,s)
-        
+
         # Scale
         l(0,'scale 1;')
         l(0,'')
@@ -174,7 +173,7 @@ class farm2d():
         l(1,'(%.8f %.8f %.8f) // 31'%(x4,y4,z2))
         l(0,');')
         l(0,'')
-        
+
         # Calculate stretching for all four directions
         def calc_stretch(dx1n,dx2n):
             # dx1n = dx1/L, dx2n = dx2/L
@@ -184,24 +183,24 @@ class farm2d():
             # is stretched slightly different than the stretching paramter r.
             rmod = np.exp(np.log(dx2n/dx1n)/(N-1))
             return N, rmod
-        
+
         def stretch(x1,L,N,r):
             dx = np.zeros(N)
             dx[0] = 1  # We will scale it up later (we can not just use dx1, because N has been ceiled)
             for i in range(N-1):
                 dx[i+1] = r*dx[i]
-                
+
             x = np.zeros(N+1)
             x[0] = x1
             for i in range(N):
                 x[i+1] = x[i]+dx[i]
-            
+
             # Normalize x-array (make it go from 0 to 1)
             Lx = x[-1] - x[0]
             xnorm = (x-x[0])/Lx
-            
+
             return xnorm*L+x[0]
-        
+
         # Discretization (number of cells in the 9 blocks)
         nx1, rx1 = calc_stretch(self.dxo/self.Lxw, self.dx/self.Lxw)
         nx2 = self.lx/self.dx
@@ -210,20 +209,20 @@ class farm2d():
         ny2 = self.ly/self.dx
         ny3, ry3 = calc_stretch(self.dx/self.Lyn, self.dxo/self.Lyn)
         nz1 = 1
-        
+
         # Stretching (first to last cell in each block)
         Rw = self.dx/self.dxo
         Rn = self.dxo/self.dx
         Re = self.dxo/self.dx
         Rs = self.dx/self.dxo
         Rz = 1
-        
+
         # Save rectilinear vertex coordinates (NOT cell center coordinates)
         self.xwake = np.arange(0,self.lx+1e-10,self.dx)
         self.ywake = np.arange(0,self.ly+1e-10,self.dx)
         self.x = np.concatenate((stretch(-self.Lxw,self.Lxw,nx1,rx1)[:-1], self.xwake[:-1], stretch(self.lx,self.Lxe,nx3,rx3)))
         self.y = np.concatenate((stretch(-self.Lys,self.Lys,ny1,ry1)[:-1], self.ywake[:-1], stretch(self.ly,self.Lyn,ny3,ry3)))
-        
+
         # Blocks
         l(0,'blocks')
         l(0,'(')
@@ -238,7 +237,7 @@ class farm2d():
         l(1,'hex ( 20 22 30 28 21 23 31 29 )  ( %d %d %d ) simpleGrading ( %.8f %.8f %.8f ) // 0 '%(nx3,ny3,nz1,Re,Rn,Rz))
         l(0,');')
         l(0,'')
-        
+
         # Boundaries
         l(0,'boundary')
         l(0,'(')
@@ -267,7 +266,7 @@ class farm2d():
         l(3,'(21 23 31 29)')
         l(2,');')
         l(1,'}')
-        
+
         l(1,'sides')
         l(1,'{')
         l(2,'type patch;')
@@ -281,7 +280,7 @@ class farm2d():
         l(3,'(29 31 30 28)')
         l(2,');')
         l(1,'}')
-        
+
         l(1,'inlet')
         l(1,'{')
         l(2,'type patch;')
@@ -292,7 +291,7 @@ class farm2d():
         l(3,'(19 17 25 27)')
         l(2,');')
         l(1,'}')
-        
+
         l(1,'outlet')
         l(1,'{')
         l(2,'type patch;')
@@ -303,19 +302,19 @@ class farm2d():
         l(3,'(23 22 30 31)')
         l(2,');')
         l(1,'}')
-        
+
         l(0,');')
         l(0,'')
-        
+
         # Merge patch pairs
         l(0,'mergePatchPairs')
         l(0,'(')
         l(0,');')
         l(0,'')
-                
+
         # Write the mesh to a blockMeshDict file for OpenFOAM
         self.write_dict2file(self.code_block,filename,'blockMeshDict')
-        
+
         # Print some statistics
         totalCells = (nx1+nx2+nx3)*(ny1+ny2+ny3)*nz1
         wakeCells = nx2*ny2*nz1
@@ -323,7 +322,7 @@ class farm2d():
         print('Total number of cells: %d'%(totalCells))
         #print('Percent of cells in wake domain: %.1f percent'%(wakeCells/totalCells*100))
         print('Cells if uniform grid had been used: %d'%(hypoCells))
-        
+
     def plot_grid(self,every=4,save_fig=False):
         # Plot the whole domain
         figh = plt.figure()
@@ -357,7 +356,7 @@ class farm2d():
         plt.xlabel('x [m]')
         plt.ylabel('y [m]')
         plt.title('Whole domain (every %dth grid line)'%every)
-        
+
         # Plot the wake domain
         figw = plt.figure()
         # Outer bound
@@ -378,26 +377,26 @@ class farm2d():
         plt.axis('scaled')
         plt.xlabel('x [m]')
         plt.ylabel('y [m]')
-        plt.title('Wake domain (every %dth grid line shown)'%every)     
+        plt.title('Wake domain (every %dth grid line shown)'%every)
 
         if save_fig == True:
-            pdf = mpl.backends.backend_pdf.PdfPages("grid.pdf") 
+            pdf = mpl.backends.backend_pdf.PdfPages("grid.pdf")
             pdf.savefig(figh, bbox_inches='tight')
             pdf.savefig(figw, bbox_inches='tight')
-            pdf.close()            
-    
-    
-    
+            pdf.close()
+
+
+
     def make_topo(self,filename):
         '''
             Create blockMeshDict
         '''
-        
-        # String to be made        
+
+        # String to be made
         self.code_topo = ''
         def l(id,s):
             self.code_topo += lineOut(id,s)
-        
+
         # Write a single turbine to topoSetDict
         def write_turbine(n,wt):
             l(1,'// actuationDisk%d'%n)
@@ -424,29 +423,29 @@ class farm2d():
             l(2,'}')
             l(1,'}')
             l(0,'')
-            
+
         # Write the topoSetDict string
         l(0,'actions')
         l(0,'(')
         for i in range(len(self.wts)):
             write_turbine(i+1,self.wts[i])
         l(0,');')
-    
+
         # Write topoSetDict file
         self.write_dict2file(self.code_topo,filename,'topoSetDict')
-    
-    
+
+
     def make_fvoptions(self,filename):
         '''
             Create fvOptions.
             Also makes a text file with simple turbine info.
         '''
-        
-        # String to be made        
+
+        # String to be made
         self.code_fvoptions = ''
         def l(id,s):
             self.code_fvoptions += lineOut(id,s)
-        
+
         def write_turbine(n,wt):
             l(0,'// Disk %d'%n)
             l(0,'disk%d'%n)
@@ -460,18 +459,18 @@ class farm2d():
             l(1,'diskArea        %.1f;'%wt['D'])
             l(0,'}')
             l(0,'')
-            
+
         # Write the turbines to fvOptions.
         for i in range(len(self.wts)):
             write_turbine(i+1,self.wts[i])
-            
+
         # Write turbine info to simple text file.
         with open('turbines.dat', "w") as file:
             file.write('Turbine number, x, y, z, D')
             for i in range(len(self.wts)):
                 turbi = self.wts[i]
                 file.write('\n%d %.4f %.4f %.4f %.4f'%(i+1, turbi['x'], turbi['y'], turbi['zh'], turbi['D']))
-    
+
         # Write source term to avoid flow development
         if self.kesource == True:
             l(0,'// K- and eps-source terms to avoid flow development')
@@ -479,7 +478,7 @@ class farm2d():
             l(0,'{')
             l(1,'type                scalarSemiImplicitSource;')
             l(1,'selectionMode       all;')
-            l(1,'volumeMode          specific;') 
+            l(1,'volumeMode          specific;')
             l(1,'// Specification of sources in OpenFOAM-2206 and newer)')
             l(1,'sources')
             l(1,'{')
@@ -488,20 +487,20 @@ class farm2d():
             l(2,'epsilon     (%.10e  0);'%(self.Seps))
             l(1,'}')
             l(0,'}')
-            
+
         # Write fvOptions file
         self.write_dict2file(self.code_fvoptions,filename,'fvOptions')
-    
+
     def make_inflow(self,filename):
         '''
             Create ASLparameters file.
         '''
-        
-        # String to be made        
+
+        # String to be made
         self.code_inflow = ''
         def l(id,s):
             self.code_inflow += lineOut(id,s)
-        
+
         # Header info
         l(0,'// Paramters for the neutral atmospheric surface layer (ASL)')
         l(0,'// aka. the log-law inflow.')
@@ -522,13 +521,13 @@ class farm2d():
 
         # Write ASLparameters file
         self.write_dict2file(self.code_inflow,filename,ff=False)
-        
+
     def make_turbulence(self,filename):
         '''
             Create turbulenceProperties file.
         '''
-        
-        # String to be made        
+
+        # String to be made
         self.code_turbulence = ''
         def l(id,s):
             self.code_turbulence += lineOut(id,s)
@@ -548,60 +547,12 @@ class farm2d():
         l(1,'}')
         l(0,'}')
         l(0,'')
-        
+
         # Write turbulenceProperties file
         self.write_dict2file(self.code_turbulence,filename,ob='turbulenceProperties')
 
 
 
 if __name__ == "__main__":
-    D = 80
-    def V80(x,y):
-        return {'x': x, 
-                'y': y,
-                'D': 80,
-                'zh': 70,
-                'CT': 0.75,
-                }
-    
-    wts = [V80(5*D,2*D),
-           V80(10*D,2*D)
-           ]
-    
-    par = {'D': D,
-          'lx': 40*D,
-          'ly': 4*D,
-          'dx': D/8,
-          'Lxw': 20*D,
-          'Lxe': 60*D,
-          'Lyn': 10*D,
-          'Lys': 10*D,
-          'dxo': 2*D,
-          'Uinf': 8.0,
-          'Iinf': 0.054,
-          'zref': 70,
-          'wts': wts
-          }
-    
-    F2D = farm2d()
-    F2D.setup(par)
-    F2D.make_grid('system/blockMeshDict')
-    F2D.plot_grid(save_fig=True)
-    F2D.make_inflow('0/ASLparameters')
-    F2D.make_topo('system/topoSetDict')
-    F2D.make_fvoptions('constant/fvOptions')
-    F2D.make_turbulence('constant/turbulenceProperties')
-
-    # Command to run blockMesh
-    if False:
-        system_com('blockMesh')
-    
-    # Visualize with pyvista
-    if False:
-        mesh = pv.read("test.foam")
-        plotter = pv.Plotter()
-        plotter.add_mesh(mesh, color="lightgray", edge_color='green', show_edges=True)
-        plotter.show_grid()
-        plotter.view_vector((-1, -1, 0.5))
-        plotter.show()
+    print('Examples are available in farm2d/examples')
 

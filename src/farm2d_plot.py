@@ -16,7 +16,7 @@ def plot_xyslice(X,Y,VAR,varname='$U$ [m/s]',varlim='None',lvls=50,filename='Non
         varmin = np.min(VAR); varmax = np.max(VAR)
     else:
         varmin = varlim[0]; varmax = varlim[1];
-    lvls = np.linspace(varmin, varmax, lvls) 
+    lvls = np.linspace(varmin, varmax, lvls)
     fig = plt.figure(figsize=(8,4))
     if len(np.shape(X)) == 1:
         # Unstructured data in vector form
@@ -35,8 +35,8 @@ def plot_xyslice(X,Y,VAR,varname='$U$ [m/s]',varlim='None',lvls=50,filename='Non
     if filename is not 'None':
         fig.savefig(filename,bbox_inches='tight')
     return fig
-        
-    
+
+
 def get_xline(sdata, var, x):
     """
         For structured data, get line with constant x.
@@ -70,7 +70,7 @@ def get_ADflow(sdata,var,yADpos,D):
     # Assuming X, Y, U are your input 2D arrays, and ymin, ymax are your scalar values
     ymin = yADpos*D - D/2  # Set your desired ymin value
     ymax = yADpos*D + D/2  # Set your desired ymax value
-    
+
     Y = sdata['Y']
     U = sdata[var]
     yminidx = np.argmin(np.abs(Y[:, 0] - ymin))
@@ -92,11 +92,11 @@ def plot_longwake(Xn,Yn,Un,xval,xmin,xmax):
     for x_val in xval:
         y_line, u_line = get_xline(data, 'Un', x_val)
         plt.plot(u_line + x_val, y_line, 'b-')
-    
+
     secax = ax.secondary_xaxis('top')
     secax.set_xlabel("$x/D$")
     secax.set_xticks(np.append(np.insert(xval, 0, xmin),xmax))
-    
+
     def half_array(x):
         new_array = []
         one_array = []
@@ -106,15 +106,15 @@ def plot_longwake(Xn,Yn,Un,xval,xmin,xmax):
             one_array.append(1.0)
             one_array.append(0.5)
         return new_array, one_array
-    
+
     new_array, one_array = half_array(xval)
     ax.set_xticks(new_array)
     ax.set_xticklabels(one_array)
-    
+
     ax.set_xlabel(r'$U/U_\infty$')
     ax.set_ylabel('$y/D$',**yd)
-    
+
     draw_turbine(D=1)
-    
+
     plt.ylim([-1.5,1.5])
     plt.xlim([xmin-0.5,xmax+0.5])

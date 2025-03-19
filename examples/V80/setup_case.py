@@ -2,6 +2,7 @@ from farm2d import farm2d
 from sys_commands import *
 from farm2d_post import *
 from farm2d_plot import *
+from farm2d_pyvista import *
 
 '''
     Single V80 turbine simulation.
@@ -17,7 +18,7 @@ post  = 1
 ####################### Initialize ###############################
 D = 80
 def V80(x,y):
-    return {'x': x, 
+    return {'x': x,
             'y': y,
             'D': D,
             'zh': 70,
