@@ -1,6 +1,6 @@
 # farm2d
 
-A setup to run 2D RANS simulations of wind farm flows in OpenFOAM.
+A setup to run 2D RANS simulations of wind farm flows in OpenFOAM. Detailed description in [Baungaard, Nishino and van der Laan (2025)](https://wes.copernicus.org/preprints/wes-2025-50/).
 
 Since `farm2d` is relatively fast, you can run the simulations on a regular laptop. This simulation of Horns Rev 1 ran in 96 seconds on my laptop (using 4 cores).
 
